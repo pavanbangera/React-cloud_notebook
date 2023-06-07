@@ -14,7 +14,7 @@ const Noteitem = (props) => {
                     <i className="fa-regular fa-pen-to-square mx-1" onClick={() => { update(note) }}></i>
                 </div>
                 <p className="card-text">{note.description}</p>
-                <button type="button" className="btn btn-primary" disabled>{note.tag}</button>
+                <button type="button" className="btn btn-outline-dark btn-sm text-success" disabled>{note.tag}</button>
             </div>
 
         </div>

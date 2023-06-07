@@ -9,7 +9,7 @@ const AuthState = (props) => {
     const { showAlert } = alertContext;
 
     const Login = async (email, password) => {
-        const response = await fetch(`http://localhost:5000/api/auth/loginUser`, {
+        const response = await fetch(`${process.env.REACT_APP_PORT}/api/auth/loginUser`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -19,6 +19,7 @@ const AuthState = (props) => {
         const json = await response.json()
         if (json.success) {
             localStorage.setItem('auth-token', json.authToken)
+            localStorage.setItem('userInfo', email)
             navigate('/');
             // console.log(localStorage.getItem('auth-token'))
             showAlert("Logged in Successfuly", "success")
@@ -28,7 +29,7 @@ const AuthState = (props) => {
         }
     }
     const Signup = async (name, email, password) => {
-        const response = await fetch(`http://localhost:5000/api/auth/createUser`, {
+        const response = await fetch(`${process.env.REACT_APP_PORT}/api/auth/createUser`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -39,6 +40,7 @@ const AuthState = (props) => {
         console.log(json)
         if (json.success) {
             localStorage.setItem('auth-token', json.authToken)
+            localStorage.setItem('userInfo', email)
             navigate('/');
             showAlert("SignUp Successfuly", "success")
         }

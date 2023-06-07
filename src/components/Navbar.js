@@ -7,6 +7,7 @@ const Navbar = () => {
     let location = useLocation();
     const handleLogout = () => {
         localStorage.removeItem('auth-token')
+        localStorage.removeItem('userInfo')
         navigate('/login');
     }
     return (
@@ -27,7 +28,7 @@ const Navbar = () => {
                     </ul>
                     {!localStorage.getItem('auth-token') ? (<><Link className={`btn btn${location.pathname === "/login" ? "" : "-outline"}-success mx-1`} to="/login">Login</Link>
                         <Link className={`btn btn${location.pathname === "/signup" ? "" : "-outline"}-success mx-1`} to="/signup">Signup</Link>
-                    </>) : <button className='btn btn-success' onClick={handleLogout}>LogOut</button>}
+                    </>) : (<><p className='text-light mx-4 my-0'>Welcome: {localStorage.getItem('userInfo')}</p> <button className='btn btn-success' onClick={handleLogout}>LogOut</button></>)}
 
                 </div>
             </div>

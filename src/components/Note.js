@@ -65,14 +65,14 @@ const Note = () => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" ref={ref2} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary" onClick={handleSubmit}>Update note</button>
+                            <button type="button" className="btn btn-success" onClick={handleSubmit}>Update note</button>
                         </div>
                     </div>
                 </div>
             </div>
             <h1>Your Notes</h1>
             {notes.length === 0 && <h6 className='mx-3'>No notes to display..</h6>}
-            <div className="row">
+            <div className="row justify-content-center">
                 {
                     notes.map((note) => {
                         return <div key={note._id} className="col-md-3 mx-1 my-2">{<Noteitem note={note} update={update} />}</div>

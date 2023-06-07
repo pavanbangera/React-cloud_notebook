@@ -31,6 +31,14 @@ const About = () => {
                 assistance, please don't hesitate to reach out to our support team.
             </p>
             <p>Thank you for choosing our cloud-based notebook website!</p>
+
+            <br />
+            <hr /><hr />
+            <h1>Contact us</h1>
+            <h6>
+                Mail-id: kpavankumar869@gmail.com
+                <br /> Mob-No: +91-7090582452
+            </h6>
         </div>
     )
 }

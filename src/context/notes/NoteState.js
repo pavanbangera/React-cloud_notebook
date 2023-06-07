@@ -8,7 +8,7 @@ const NoteState = (props) => {
     const noteInitial = []
     const [notes, setNotes] = useState(noteInitial)
     const getNote = async () => {
-        const response = await fetch("http://localhost:5000/api/notes/fetchnotes", {
+        const response = await fetch(`${process.env.REACT_APP_PORT}/api/notes/fetchnotes`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -22,7 +22,7 @@ const NoteState = (props) => {
     }
 
     const addNote = async (title, description, tag) => {
-        const response = await fetch(`http://localhost:5000/api/notes/addnote`, {
+        const response = await fetch(`${process.env.REACT_APP_PORT}/api/notes/addnote`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const NoteState = (props) => {
     }
 
     const deleteNote = async (id) => {
-        await fetch(`http://localhost:5000/api/notes/deletenote/${id}`, {
+        await fetch(`${process.env.REACT_APP_PORT}/api/notes/deletenote/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const NoteState = (props) => {
         setNotes(notes.filter((n) => { return n._id !== id }))
     }
     const editNote = async (id, title, description, tag) => {
-        await fetch(`http://localhost:5000/api/notes/updatenote/${id}`, {
+        await fetch(`${process.env.REACT_APP_PORT}/api/notes/updatenote/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

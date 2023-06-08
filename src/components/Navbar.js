@@ -23,11 +23,11 @@ const Navbar = () => {
                             <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to={`${process.env.REACT_APP_PORT}/about`} >About</Link>
+                            <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to={`${process.env.REACT_APP_PORT_FRONT}/about`} >About</Link>
                         </li>
                     </ul>
-                    {!localStorage.getItem('auth-token') ? (<><Link className={`btn btn${location.pathname === "/login" ? "" : "-outline"}-success mx-1`} to={`${process.env.REACT_APP_PORT}/login`}>Login</Link>
-                        <Link className={`btn btn${location.pathname === "/signup" ? "" : "-outline"}-success mx-1`} to={`${process.env.REACT_APP_PORT}/signup`}>Signup</Link>
+                    {!localStorage.getItem('auth-token') ? (<><Link className={`btn btn${location.pathname === "/login" ? "" : "-outline"}-success mx-1`} to={`${process.env.REACT_APP_PORT_FRONT}/login`}>Login</Link>
+                        <Link className={`btn btn${location.pathname === "/signup" ? "" : "-outline"}-success mx-1`} to={`${process.env.REACT_APP_PORT_FRONT}/signup`}>Signup</Link>
                     </>) : (<><p className='text-light mx-4 my-0'>Welcome: {localStorage.getItem('userInfo')}</p> <button className='btn btn-success' onClick={handleLogout}>LogOut</button></>)}
 
                 </div>

@@ -26,9 +26,9 @@ function App () {
               <div className="container">
                 <Routes>
                   <Route exact path="/" element={<Home />}></Route>
-                  <Route exact path="/about" element={<About />}></Route>
-                  <Route exact path="/login" element={<Login />}></Route>
-                  <Route exact path="/signup" element={<Signup />}></Route>
+                  <Route exact path={`${process.env.REACT_APP_PORT_FRONT}/about`} element={<About />}></Route>
+                  <Route exact path={`${process.env.REACT_APP_PORT_FRONT}/login`} element={<Login />}></Route>
+                  <Route exact path={`${process.env.REACT_APP_PORT_FRONT}/signup`} element={<Signup />}></Route>
                 </Routes>
               </div>
             </AuthState>
